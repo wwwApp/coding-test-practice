@@ -29,13 +29,30 @@ https://app.codility.com/programmers/lessons/3-time_complexity/perm_missing_elem
 ``` js 
 
 function solution(A) {
-    A.sort()
-    for(let i=0; i <A.length; i++) {
-        let shouldBeNext = A[i] + 1;
-        if(shouldBeNext != A[i+1]){
-            return shouldBeNext
-        }
-    }
+    // going to solve this by
+    // sum of all els - sum of els in A
+    // equation to find the sume of all els in the array 
+    // (N * (1 + N)) / 2
+
+    // since its missing one el
+    // original array is 1 greater in length
+    let allSize = A.length + 1
+    let allSum = (allSize * (1 + allSize)) / 2
+    let givenSum = A.reduce((sum,el)=>sum+el, 0)
+
+    return allSum - givenSum
 }
+
+// this solution will fail more complicated tests
+// such as if your missing item is first or last item
+// function solution(A) {
+//    A.sort()
+//    for(let i=0; i <A.length; i++) {
+//        let shouldBeNext = A[i] + 1;
+//        if(shouldBeNext != A[i+1]){
+//            return shouldBeNext
+//        }
+//    }
+// }
 
 ```
