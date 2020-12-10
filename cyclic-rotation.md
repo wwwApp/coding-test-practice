@@ -37,6 +37,8 @@ N and K are integers within the range [0..100];
 each element of array A is an integer within the range [−1,000..1,000].
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
 
+https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/
+
 ``` js
 
 // you can write to stdout for debugging purposes, e.g.
